@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="aDistinguishThreadStarter" title="[A] Distinguish Thread Starter" version_string="1.0.0" version_id="1000071" url="https://www.apantic.com" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners/>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups/>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="style_property_adtsArrow_description_master" version_id="1000071" version_string="1.0.0"><![CDATA[]]></phrase>
+    <phrase title="style_property_adtsArrow_master" version_id="1000071" version_string="1.0.0"><![CDATA[Arrow]]></phrase>
+    <phrase title="style_property_adtsDark_description_master" version_id="1000071" version_string="1.0.0"><![CDATA[]]></phrase>
+    <phrase title="style_property_adtsDark_master" version_id="1000071" version_string="1.0.0"><![CDATA[Dark Colour]]></phrase>
+    <phrase title="style_property_adtsLight_description_master" version_id="1000071" version_string="1.0.0"><![CDATA[]]></phrase>
+    <phrase title="style_property_adtsLight_master" version_id="1000071" version_string="1.0.0"><![CDATA[Light Colour]]></phrase>
+    <phrase title="style_property_group_aDistinguishThreadStarter_master" version_id="1000071" version_string="1.0.0"><![CDATA[[A] Distinguish Thread Starter]]></phrase>
+    <phrase title="style_property_group_aDistinguishThreadStarter_master_desc" version_id="1000071" version_string="1.0.0"><![CDATA[[A] Distinguish Thread Starter settings]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties>
+    <property property_name="adtsDark" property_type="css" definition="1" group_name="aDistinguishThreadStarter" title="Dark Colour" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="10" sub_group=""><![CDATA[{"background-color":"rgb(189, 141, 193)"}]]></property>
+    <property property_name="adtsLight" property_type="css" definition="1" group_name="aDistinguishThreadStarter" title="Light Colour" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="20" sub_group=""><![CDATA[{"background-color":"rgb(202, 172, 206)"}]]></property>
+    <property property_name="adtsArrow" property_type="css" definition="1" group_name="aDistinguishThreadStarter" title="Arrow" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="30" sub_group=""><![CDATA[{"border-left-color":"rgb(202, 172, 206)"}]]></property>
+    <group group_name="aDistinguishThreadStarter" display_order="99999">
+      <title>[A] Distinguish Thread Starter</title>
+      <description>[A] Distinguish Thread Starter settings</description>
+    </group>
+  </style_properties>
+  <templates>
+    <template title="adts_message_user_block.css" version_id="1000071" version_string="1.0.0"><![CDATA[.thread-starter .messageUserBlock
+{
+	{xen:property adtsDark}
+}
+
+.thread-starter .messageUserBlock div.avatarHolder
+{
+	{xen:property adtsLight}
+}
+
+.thread-starter .extraUserInfo
+{
+	{xen:property adtsLight}
+}
+
+.thread-starter .messageUserBlock .arrow span
+{
+	{xen:property adtsArrow}
+}]]></template>
+  </templates>
+  <public_template_modifications>
+    <modification template="message_user_info.css" modification_key="adtsAddColours" description="Adds the thread starter colours" execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[<xen:if is="{xen:property enableResponsive}">]]></find>
+      <replace><![CDATA[<xen:include template="adts_message_user_block.css" />
+
+$0]]></replace>
+    </modification>
+    <modification template="message" modification_key="adtsSetClass" description="Set CSS classes" execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[{xen:if $message.isDeleted, 'deleted'}]]></find>
+      <replace><![CDATA[$0 {xen:if '{$thread.user_id} == {$message.user_id}', 'thread-starter'}]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
