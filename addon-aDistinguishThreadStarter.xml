@@ -17,8 +17,12 @@
     <interface_groups/>
   </permissions>
   <phrases>
+    <phrase title="style_property_adtsArrowBorder_description_master" version_id="1000071" version_string="1.0.0"><![CDATA[]]></phrase>
+    <phrase title="style_property_adtsArrowBorder_master" version_id="1000071" version_string="1.0.0"><![CDATA[Arrow Border]]></phrase>
     <phrase title="style_property_adtsArrow_description_master" version_id="1000071" version_string="1.0.0"><![CDATA[]]></phrase>
     <phrase title="style_property_adtsArrow_master" version_id="1000071" version_string="1.0.0"><![CDATA[Arrow]]></phrase>
+    <phrase title="style_property_adtsBorder_description_master" version_id="1000071" version_string="1.0.0"><![CDATA[]]></phrase>
+    <phrase title="style_property_adtsBorder_master" version_id="1000071" version_string="1.0.0"><![CDATA[Border]]></phrase>
     <phrase title="style_property_adtsDark_description_master" version_id="1000071" version_string="1.0.0"><![CDATA[]]></phrase>
     <phrase title="style_property_adtsDark_master" version_id="1000071" version_string="1.0.0"><![CDATA[Dark Colour]]></phrase>
     <phrase title="style_property_adtsLight_description_master" version_id="1000071" version_string="1.0.0"><![CDATA[]]></phrase>
@@ -28,9 +32,11 @@
   </phrases>
   <route_prefixes/>
   <style_properties>
-    <property property_name="adtsDark" property_type="css" definition="1" group_name="aDistinguishThreadStarter" title="Dark Colour" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="10" sub_group=""><![CDATA[{"background-color":"rgb(189, 141, 193)"}]]></property>
-    <property property_name="adtsLight" property_type="css" definition="1" group_name="aDistinguishThreadStarter" title="Light Colour" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="20" sub_group=""><![CDATA[{"background-color":"rgb(202, 172, 206)"}]]></property>
-    <property property_name="adtsArrow" property_type="css" definition="1" group_name="aDistinguishThreadStarter" title="Arrow" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="30" sub_group=""><![CDATA[{"border-left-color":"rgb(202, 172, 206)"}]]></property>
+    <property property_name="adtsDark" property_type="css" definition="1" group_name="aDistinguishThreadStarter" title="Dark Colour" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="10" sub_group=""><![CDATA[{"background-color":"rgb(219, 170, 212)"}]]></property>
+    <property property_name="adtsLight" property_type="css" definition="1" group_name="aDistinguishThreadStarter" title="Light Colour" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="20" sub_group=""><![CDATA[{"background-color":"rgb(235, 209, 231)"}]]></property>
+    <property property_name="adtsArrow" property_type="css" definition="1" group_name="aDistinguishThreadStarter" title="Arrow" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="30" sub_group=""><![CDATA[{"border-left-color":"rgb(235, 209, 231)"}]]></property>
+    <property property_name="adtsBorder" property_type="css" definition="1" group_name="aDistinguishThreadStarter" title="Border" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="40" sub_group=""><![CDATA[{"border-color":"rgb(219, 170, 212)"}]]></property>
+    <property property_name="adtsArrowBorder" property_type="css" definition="1" group_name="aDistinguishThreadStarter" title="Arrow Border" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="50" sub_group=""><![CDATA[{"border-left-color":"rgb(219, 170, 212)"}]]></property>
     <group group_name="aDistinguishThreadStarter" display_order="99999">
       <title>[A] Distinguish Thread Starter</title>
       <description>[A] Distinguish Thread Starter settings</description>
@@ -55,6 +61,16 @@
 .thread-starter .messageUserBlock .arrow span
 {
 	{xen:property adtsArrow}
+}
+
+.thread-starter .messageUserBlock
+{
+	{xen:property adtsBorder}
+}
+
+.thread-starter .messageUserBlock .arrow
+{
+	{xen:property adtsArrowBorder}
 }]]></template>
   </templates>
   <public_template_modifications>
