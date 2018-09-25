@@ -1,12 +1,14 @@
 # Distinguish Thread Starter
 
-Copyright (c) 2016, Apantic Limited
+This add-on distinguishes the posts created by a thread starter in the thread by changing the colour of the message bar.
+
+Also see: https://xenforo.com/community/resources/n-distinguish-thread-starter.5335/
 
 ## Contributing
-We appreciate all contributions to this software to help improve FOSS software in XenForo. Just submit a pull request!
+We appreciate all contributions! Just submit a pull request!
 
 ## Legal Stuff
-   Copyright 2016, Apantic Limited
+   Copyright Apantic Limited
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
